@@ -5,105 +5,141 @@
 */
 
 import java.util.Scanner;
-public class Main{
-
-   public static void main(String[]args){
-
-    Scanner store = new Scanner(System.in);
-
-    int choice,order,price, total=0, category;
-    
-    int[] food = {150, 150, 180, 250, 160};
-
-    int[] snacks={60,70,80,90,60};
-
-    int[]beverages={120,150,180,190,370};
-
-    int i = 0;
-    
-      System.out.println("Welcome to Little Kyoto Restaurant\n ");
-      System.out.println("+=================================+\n");
+public class Store {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+	
+	int choice, food, snacks, beverages, category, price, total = 0;
+	
+		do{
+		System.out.println("+=================================+"); 
+		System.out.println("Welcome to Little Kyoto Restaurant ");
+      System.out.println("+=================================+");
       System.out.println("Do you want to order?");
       System.out.println("1-Yes\n2-No: ");
-      choice = store.nextInt();
-           
-           do {
-               System.out.println("Please select category");
-               System.out.println("\t1-Food\t\t2-Snacks\t\t3-Berverages");
-               category = store.nextInt();
-               
-               if(category == 1){ //food categiory
-                    i++;
-            System.out.println("Please select food that you would like to order."); 
-            System.out.println("FOOD MENU");
-            System.out.println("\t\t [1]SUSHI-150.00");
-            System.out.println("\t\t [2]SISHAMI-150.00");
-            System.out.println("\t\t [3]CHICKEN TERIYAKI-180");
-            System.out.println("\t\t [4]KOBE BEEF STEAK-250.00");
-            System.out.println("\t\t [5]RAMEN-160.00");
-            System.out.print("\t\t\t");
-            order = store.nextInt();
-    
-            int j = order -1;
-           total += food[j];
-               }
-               
-            else if(category == 2){//snack category 
-                 i++;
-            System.out.println("Please select food that you would like to order."); 
-            System.out.println("SNACK MENU");
-            System.out.println("\t\t [1]TABOYAKI-60.00");
-            System.out.println("\t\t [2]DANGO-70.00");
-            System.out.println("\t\t [3]DORAYAKI-80.00");
-            System.out.println("\t\t [4]KAKIGORI-90.00");
-            System.out.println("\t\t [5]NIKUMAN-60.00");
-            System.out.print("\t\t\t");
-            order = store.nextInt();
-    
-            int j = order -1;
-           total += snacks[j];
-            }
-            else if(category == 3){
-                   i++;
-            System.out.println("Please select food that you would like to order."); 
-            System.out.println("BEVERAGES MENU");
-            System.out.println("\t\t [1]LEMONADE-120.00");
-            System.out.println("\t\t [2]RAMONE-150.00");
-            System.out.println("\t\t [3]YUZU MARMALADE-180.00");
-            System.out.println("\t\t [4]JASMINE TEA-190.00");
-            System.out.println("\t\t [5]SAKE-370.00");
-            System.out.print("\t\t\t");
-            order = store.nextInt();
-    
-            int j = order -1;
-            total += beverages[j];
-            }
-            
-            else{
-                
-            }
-               
-              
-            
-         System.out.println("Enter another order?");
-         System.out.println("1-Yes\n2-No");
-         choice = store.nextInt();
-           if(choice == 1){
-               choice = 1;
-           }
-           
-           //end of displaying items
-           
-           else{//total orders
-         
-                System.out.println("Total: " + total);
-                System.out.println("Loops: " + i);
-                System.out.println("Thank you and come again!");
-               
-           }
+             choice = in.nextInt();
 
+      System.out.println("+=================================+"); 
+		System.out.println(" LITTLE KYOTO FOOD MENU: ");
+		System.out.println(" ");
+		System.out.println("[1] - SUSHI-150.00");
+		System.out.println("[2] - SISHAMI-150.00 ");
+		System.out.println("[3] - CHICKEN TERIYAKI-180 ");
+      System.out.println("[4] - KOBE BEEF STEAK-250.00 ");
+      System.out.println("[5] - RAMEN-160.00");
+		System.out.print("Choose your order: ");
+				food = in.nextInt();
+				System.out.println(" ");
+		
+		System.out.println("+=================================+"); 
+		System.out.println(" LITTLE KYOTO SNACKS MENU ");
+		System.out.println(" ");
+		System.out.println("[1] - TABOYAKI-60.00");
+		System.out.println("[2] - DANGO-70.00");
+		System.out.println("[3] - DORAYAKI-80.00");
+      System.out.println("[4] - KAKIGORI-90.00");
+      System.out.println("[5] - NIKUMAN-60.00 ");
+		System.out.print("Choose your order: ");
+				snacks = in.nextInt();
+				System.out.println(" ");
+			
+		System.out.println("+=================================+");
+		System.out.println("LITTLE KYOTO BEVERAGES : ");
+		System.out.println(" ");
+		System.out.println("[1] - LEMONADE-120.00 ");
+		System.out.println("[2] - RAMONE-150.00 "); 
+		System.out.println("[3] - YUZU MARMALADE-180.00 ");
+      System.out.println("[4] - JASMINE TEA-190.00 ");
+      System.out.println("[5] - SAKE-370.00 ");
+		System.out.println(" ");
+		System.out.print("Choose your order: ");
+				beverages = in.nextInt();
+				System.out.println(" ");
+		
+		if(food == 1){
+			    price = 150;
+			    total = price + total;
+			   System.out.println(" You ordered: Sushi"+" - "+price);
             
-           } while(choice == 1);
+		} else if (food == 2){
+			   price = 150;
+			   total = price + total;
+			   System.out.println(" You ordered: Sishami"+" - "+price);	
+            
+		} else if (food == 3){
+			   price = 180;
+			   total = price + total;
+			   System.out.println(" You ordered: Chicken Teriyaki"+" - "+price);
+            
+     } else if (food == 4){
+			   price = 250;
+			   total = price + total;
+			   System.out.println(" You ordered: Kobe Beef Steak"+" - "+price);
+            
+      } else if (food == 5){
+			   price = 160;
+			   total = price + total;
+			   System.out.println(" You ordered: Ramen"+" - "+price);
+	} 
+
+		if (snacks == 1){
+			  price = 60;
+		     total = price + total;
+			  System.out.println(" You ordered: Taboyaki"+" - "+price);	
+		} else if (snacks == 2){
+			  price = 70;
+			  total = price + total;
+			  System.out.println(" You ordered: Dango"+" - "+price);	
            
+		} else if (snacks == 3){
+			  price = 80;
+		     total = price + total;
+			  System.out.println(" You ordered: Dorayaki"+" - "+price);	
+         
+      } else if (snacks == 4){
+			  price = 90;
+			  total = price + total;
+			  System.out.println(" You ordered: Kakigori"+" - "+price);	
           
-         }
+       } else if (snacks == 5){
+			  price = 60;
+			  total = price + total;
+			  System.out.println(" You ordered: Nikuman"+" - "+price);
+	}
+   
+		if (beverages == 1){
+			  price = 120;
+			  total = price + total;
+			  System.out.println(" You ordered: Lemonade"+" - "+price);	
+         
+	    } else if (beverages == 2){
+			  price = 150;
+			  total = price + total;
+			  System.out.println(" You ordered: Ramone"+" - "+price);	
+         
+	    } else if (beverages == 3){
+			  price = 180;
+			  total = price + total;
+			  System.out.println(" You ordered: Yuzu Marmalade "+" - "+price);
+         
+	     } else if (beverages == 4){
+			  price = 190;
+			  total = price + total;
+			  System.out.println(" You ordered: Jasmine Tea"+" - "+price);
+         
+         } else if (beverages == 5){
+			  price = 370;
+			  total = price + total;
+			 System.out.println(" You ordered: Sake "+" - "+price);
+	}
+	System.out.println("+=================================+");
+	System.out.println(" ");
+	System.out.println("Total Price: "+total);
+	System.out.println(" ");
+	System.out.print("THANK YOU AND COME AGAIN ");
+		category= in.nextInt();
+		
+		}while(category == 1);
+		
+}
+}
