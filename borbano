@@ -6,14 +6,15 @@
 
 import java.util.Scanner;
 public class Store {
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+
+      public static void main(String[] args) {
+      Scanner in = new Scanner(System.in);
 	
-	int choice, food, snacks, beverages, category, price, total = 0;
+      int choice, food, snacks, beverages, category, price, total = 0;
 	
-		do{
-		System.out.println("+=================================+"); 
-		System.out.println("Welcome to Little Kyoto Restaurant ");
+    do{
+      System.out.println("+=================================+"); 
+      System.out.println("Welcome to Little Kyoto Restaurant ");
       System.out.println("+=================================+");
       System.out.println("Do you want to order?");
       System.out.println("1-Yes\n2-No: ");
