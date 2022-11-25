@@ -1,0 +1,55 @@
+**
+* Name: Ms. Jesyl O.Borbano
+* Section: IT Dept
+* Year: 4th Year
+*/
+
+//Write a program that asks the user to enter grades. 
+//As long a the user keeps choosing 'Yes', the program will keep on asking for a grade.
+//When the user chooses 'No', display the average of the entered grades as output.
+
+import java.util.Scanner;
+public class Main{
+
+   public static void main(String[]args){
+
+    Scanner Grades = new Scanner(System.in);
+
+    int option, grade, total=0, loop =0;
+    float average;
+      System.out.println("Enter grade?");
+      System.out.println("1- Yes");
+      System.out.println("2- No");
+      option = Grades.nextInt();
+        if(option == 1) {
+           
+           do {
+            System.out.println("Enter grade");
+            grade = Grades.nextInt();
+
+            total+=grade;
+            loop++;
+
+            System.out.println("Enter another grade?");
+            System.out.println("1- Yes");
+            System.out.println("2- No");
+            option = Grades.nextInt();
+
+
+           } while(option == 1);
+           
+           average = total/loop;
+           System.out.println("Total: " + total);
+           System.out.println("Loops: " + loop);
+           System.out.println("Average: "+ average);
+
+         }
+         
+
+
+        else {
+        System.out.println("Congratulations");
+        } 
+         
+   }
+}
